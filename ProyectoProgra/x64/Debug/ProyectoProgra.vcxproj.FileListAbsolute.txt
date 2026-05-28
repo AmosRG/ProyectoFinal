@@ -1,0 +1,13 @@
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.vcxproj.AssemblyReference.cache
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\Proyecto.F005DC0C.Up2Date
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Login.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.vcxproj.GenerateResource.cache
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Registro.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.MenuPrincipal.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Ventas.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Usuarios.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Tanques.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Inventario.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Reportes.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Combustibles.resources
+C:\Users\reyes\OneDrive\Documentos\Uni\Programación\ProyectoProgra\ProyectoProgra\x64\Debug\ProyectoProgra.Bombas.resources

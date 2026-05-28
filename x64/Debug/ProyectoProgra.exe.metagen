@@ -1,0 +1,234 @@
+  ProyectoProgra.Bombas.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Combustibles.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Inventario.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Login.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.MenuPrincipal.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Registro.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Reportes.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Tanques.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Usuarios.resources - Embedded, ContainedInManifestFile, 
+  ProyectoProgra.Ventas.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly ProyectoProgra, Version=0.0.*, Culture=Todos los idiomas (todos los países): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly MySql.Data, Version=9.7.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class ProyectoProgra.BombaSistema: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idBomba : Public
+    Int32 numeroBomba : Public
+    Boolean estadoBomba : Public
+    Int32 idTanque : Public
+    System.String nombreTanque : Public
+    System.String nombreCombustible : Public
+Class ProyectoProgra.dbConexion: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getConexion(): PrivateScope, Public, HideBySig
+    cerrarConexion(): PrivateScope, Public, HideBySig
+    conexionActiva(): PrivateScope, Public, HideBySig
+    ejecutaConsulta(String): PrivateScope, Public, HideBySig
+    ejecutaConsultaTabla(String): PrivateScope, Public, HideBySig
+    ejecutaIUD(MySqlCommand): PrivateScope, Public, HideBySig
+Class ProyectoProgra.ControladorBombas: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarBombas(): PrivateScope, Public, HideBySig
+    listarTanquesActivos(): PrivateScope, Public, HideBySig
+    registrarBomba(BombaSistema, String&): PrivateScope, Public, HideBySig
+    actualizarBomba(BombaSistema, String&): PrivateScope, Public, HideBySig
+    cambiarEstadoBomba(Int32, Boolean(HasFieldMarshal), String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.Bombas: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.CombustibleSistema: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idCombustible : Public
+    System.String nombreCombustible : Public
+    System.String tipoCombustible : Public
+    Double precioGalon : Public
+    Boolean estadoCombustible : Public
+Class ProyectoProgra.ControladorCombustibles: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarCombustibles(): PrivateScope, Public, HideBySig
+    registrarCombustible(CombustibleSistema, String&): PrivateScope, Public, HideBySig
+    actualizarCombustible(CombustibleSistema, String&): PrivateScope, Public, HideBySig
+    cambiarEstadoCombustible(Int32, Boolean(HasFieldMarshal), String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.Combustibles: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.MovimientoInventarioSistema: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idMovimiento : Public
+    System.String tipoMovimiento : Public
+    Double cantidad : Public
+    System.String descripcionMovimiento : Public
+    Int32 idTanque : Public
+    Int32 idUsuario : Public
+    System.String nombreTanque : Public
+    System.String nombreUsuario : Public
+Class ProyectoProgra.ControladorInventario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarTanquesActivos(): PrivateScope, Public, HideBySig
+    listarMovimientos(): PrivateScope, Public, HideBySig
+    obtenerNivelActualTanque(Int32): PrivateScope, Public, HideBySig
+    registrarMovimiento(MovimientoInventarioSistema, String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.Usuario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(Int32, System.String, System.String, System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idUsuario : Public
+    System.String nombreUsuario : Public
+    System.String nombre : Public
+    System.String contrasenaUsuario : Public
+    System.String nombreRol : Public
+Class ProyectoProgra.PermisoMenu: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Boolean puedeUsuarios : Public
+    Boolean puedeCombustibles : Public
+    Boolean puedeTanques : Public
+    Boolean puedeBombas : Public
+    Boolean puedeInventario : Public
+    Boolean puedeVentas : Public
+    Boolean puedeReportes : Public
+Class ProyectoProgra.ControladorLogin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    validarLogin(String, String): PrivateScope, Public, HideBySig
+Class ProyectoProgra.ControladorMenuPrincipal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    obtenerBienvenida(Usuario): PrivateScope, Public, HideBySig
+    obtenerRol(Usuario): PrivateScope, Public, HideBySig
+    obtenerPermisos(Usuario): PrivateScope, Public, HideBySig
+Class ProyectoProgra.ControladorRegistroUsuario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarRoles(): PrivateScope, Public, HideBySig
+    registrarUsuario(String, String, String, String, String, Int32, String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.FiltroReporte: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String tipoReporte : Public
+    System.DateTime fechaInicio : Public
+    System.DateTime fechaFin : Public
+Class ProyectoProgra.ControladorReportes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    generarReporte(String, DateTime, DateTime): PrivateScope, Public, HideBySig
+    reporteVentasResumen(DateTime, DateTime): PrivateScope, Public, HideBySig
+    reporteVentasDetalle(DateTime, DateTime): PrivateScope, Public, HideBySig
+    reporteInventarioActual(): PrivateScope, Public, HideBySig
+    reporteMovimientosInventario(DateTime, DateTime): PrivateScope, Public, HideBySig
+    reporteTanquesBajoMinimo(): PrivateScope, Public, HideBySig
+    obtenerResumenReporte(String, DataTable): PrivateScope, Public, HideBySig
+Class ProyectoProgra.TanqueSistema: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idTanque : Public
+    System.String nombreTanque : Public
+    Double capacidadTanque : Public
+    Double nivelActual : Public
+    Double nivelMinimo : Public
+    Boolean estadoTanque : Public
+    Int32 idCombustible : Public
+    System.String nombreCombustible : Public
+Class ProyectoProgra.ControladorTanques: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarTanques(): PrivateScope, Public, HideBySig
+    listarCombustiblesActivos(): PrivateScope, Public, HideBySig
+    registrarTanque(TanqueSistema, String&): PrivateScope, Public, HideBySig
+    actualizarTanque(TanqueSistema, String&): PrivateScope, Public, HideBySig
+    cambiarEstadoTanque(Int32, Boolean(HasFieldMarshal), String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.UsuarioSistema: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idUsuario : Public
+    System.String nombre : Public
+    System.String correo : Public
+    System.String nombreUsuario : Public
+    System.String contrasenaUsuario : Public
+    Boolean estadoUsuario : Public
+    Int32 idRol : Public
+    System.String nombreRol : Public
+Class ProyectoProgra.ControladorUsuarios: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarUsuarios(): PrivateScope, Public, HideBySig
+    listarRoles(): PrivateScope, Public, HideBySig
+    registrarUsuario(UsuarioSistema, String, String&): PrivateScope, Public, HideBySig
+    actualizarUsuario(UsuarioSistema, String, String&): PrivateScope, Public, HideBySig
+    cambiarEstadoUsuario(Int32, Boolean(HasFieldMarshal), String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.ClienteVenta: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idCliente : Public
+    System.String nit : Public
+    System.String nombreCliente : Public
+Class ProyectoProgra.VentaCalculo: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 idBomba : Public
+    Int32 numeroBomba : Public
+    Int32 idTanque : Public
+    Int32 idCombustible : Public
+    Int32 idOferta : Public
+    System.String nombreCombustible : Public
+    System.String nombreOferta : Public
+    Double cantidadGalones : Public
+    Double precioUnitario : Public
+    Double nivelActual : Public
+    Double subtotal : Public
+    Double descuento : Public
+    Double total : Public
+Class ProyectoProgra.ControladorVenta: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    listarBombasActivas(): PrivateScope, Public, HideBySig
+    listarVentasRecientes(): PrivateScope, Public, HideBySig
+    buscarClientePorNit(String, String&): PrivateScope, Public, HideBySig
+    calcularVenta(Int32, Double, String&): PrivateScope, Public, HideBySig
+    registrarVenta(Int32, Double, Int32, Int32, String&): PrivateScope, Public, HideBySig
+Class ProyectoProgra.Inventario: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(ProyectoProgra.Usuario): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.Registro: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.Usuarios: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.FrmTanques: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.Reportes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.Ventas: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(ProyectoProgra.Usuario): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.MenuPrincipal: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(ProyectoProgra.Usuario): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class ProyectoProgra.Login: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
