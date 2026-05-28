@@ -12,10 +12,10 @@ namespace ProyectoProgra {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
-	public ref class FrmTanques : public System::Windows::Forms::Form
+	public ref class Tanques : public System::Windows::Forms::Form
 	{
 	public:
-		FrmTanques(void)
+		Tanques(void)
 		{
 			InitializeComponent();
 
@@ -27,7 +27,7 @@ namespace ProyectoProgra {
 		}
 
 	protected:
-		~FrmTanques()
+		~Tanques()
 		{
 			if (components)
 			{
@@ -75,30 +75,56 @@ namespace ProyectoProgra {
 			this->lblNivelActual = (gcnew System::Windows::Forms::Label());
 			this->lblNivelMinimo = (gcnew System::Windows::Forms::Label());
 			this->lblCombustible = (gcnew System::Windows::Forms::Label());
+
 			this->txtNombre = (gcnew System::Windows::Forms::TextBox());
 			this->txtCapacidad = (gcnew System::Windows::Forms::TextBox());
 			this->txtNivelActual = (gcnew System::Windows::Forms::TextBox());
 			this->txtNivelMinimo = (gcnew System::Windows::Forms::TextBox());
+
 			this->cmbCombustible = (gcnew System::Windows::Forms::ComboBox());
 			this->chkActivo = (gcnew System::Windows::Forms::CheckBox());
+
 			this->btnNuevo = (gcnew System::Windows::Forms::Button());
 			this->btnGuardar = (gcnew System::Windows::Forms::Button());
 			this->btnActualizar = (gcnew System::Windows::Forms::Button());
 			this->btnCambiarEstado = (gcnew System::Windows::Forms::Button());
 			this->btnCerrar = (gcnew System::Windows::Forms::Button());
+
 			this->dgvTanques = (gcnew System::Windows::Forms::DataGridView());
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvTanques))->BeginInit();
 			this->SuspendLayout();
+
+			// 
+			// Tanques
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(900, 620);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->Name = L"Tanques";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Gesti\u00F3n de Tanques";
+
 			// 
 			// lblTitulo
 			// 
-			this->lblTitulo->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 18, System::Drawing::FontStyle::Bold));
+			this->lblTitulo->Font = (gcnew System::Drawing::Font(
+				L"Arial Rounded MT Bold",
+				18,
+				System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)
+			));
 			this->lblTitulo->Location = System::Drawing::Point(30, 20);
 			this->lblTitulo->Name = L"lblTitulo";
 			this->lblTitulo->Size = System::Drawing::Size(820, 40);
 			this->lblTitulo->TabIndex = 0;
-			this->lblTitulo->Text = L"GESTIÓN DE TANQUES";
+			this->lblTitulo->Text = L"GESTI\u00D3N DE TANQUES";
 			this->lblTitulo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+
 			// 
 			// lblNombre
 			// 
@@ -107,6 +133,15 @@ namespace ProyectoProgra {
 			this->lblNombre->Size = System::Drawing::Size(160, 20);
 			this->lblNombre->TabIndex = 1;
 			this->lblNombre->Text = L"Nombre del tanque";
+
+			// 
+			// txtNombre
+			// 
+			this->txtNombre->Location = System::Drawing::Point(35, 110);
+			this->txtNombre->Name = L"txtNombre";
+			this->txtNombre->Size = System::Drawing::Size(330, 22);
+			this->txtNombre->TabIndex = 2;
+
 			// 
 			// lblCapacidad
 			// 
@@ -115,6 +150,15 @@ namespace ProyectoProgra {
 			this->lblCapacidad->Size = System::Drawing::Size(160, 20);
 			this->lblCapacidad->TabIndex = 3;
 			this->lblCapacidad->Text = L"Capacidad";
+
+			// 
+			// txtCapacidad
+			// 
+			this->txtCapacidad->Location = System::Drawing::Point(390, 110);
+			this->txtCapacidad->Name = L"txtCapacidad";
+			this->txtCapacidad->Size = System::Drawing::Size(180, 22);
+			this->txtCapacidad->TabIndex = 4;
+
 			// 
 			// lblNivelActual
 			// 
@@ -123,6 +167,15 @@ namespace ProyectoProgra {
 			this->lblNivelActual->Size = System::Drawing::Size(160, 20);
 			this->lblNivelActual->TabIndex = 5;
 			this->lblNivelActual->Text = L"Nivel actual";
+
+			// 
+			// txtNivelActual
+			// 
+			this->txtNivelActual->Location = System::Drawing::Point(35, 170);
+			this->txtNivelActual->Name = L"txtNivelActual";
+			this->txtNivelActual->Size = System::Drawing::Size(180, 22);
+			this->txtNivelActual->TabIndex = 6;
+
 			// 
 			// lblNivelMinimo
 			// 
@@ -130,7 +183,16 @@ namespace ProyectoProgra {
 			this->lblNivelMinimo->Name = L"lblNivelMinimo";
 			this->lblNivelMinimo->Size = System::Drawing::Size(160, 20);
 			this->lblNivelMinimo->TabIndex = 7;
-			this->lblNivelMinimo->Text = L"Nivel mínimo";
+			this->lblNivelMinimo->Text = L"Nivel m\u00EDnimo";
+
+			// 
+			// txtNivelMinimo
+			// 
+			this->txtNivelMinimo->Location = System::Drawing::Point(245, 170);
+			this->txtNivelMinimo->Name = L"txtNivelMinimo";
+			this->txtNivelMinimo->Size = System::Drawing::Size(180, 22);
+			this->txtNivelMinimo->TabIndex = 8;
+
 			// 
 			// lblCombustible
 			// 
@@ -139,34 +201,7 @@ namespace ProyectoProgra {
 			this->lblCombustible->Size = System::Drawing::Size(160, 20);
 			this->lblCombustible->TabIndex = 9;
 			this->lblCombustible->Text = L"Combustible";
-			// 
-			// txtNombre
-			// 
-			this->txtNombre->Location = System::Drawing::Point(35, 110);
-			this->txtNombre->Name = L"txtNombre";
-			this->txtNombre->Size = System::Drawing::Size(330, 22);
-			this->txtNombre->TabIndex = 2;
-			// 
-			// txtCapacidad
-			// 
-			this->txtCapacidad->Location = System::Drawing::Point(390, 110);
-			this->txtCapacidad->Name = L"txtCapacidad";
-			this->txtCapacidad->Size = System::Drawing::Size(180, 22);
-			this->txtCapacidad->TabIndex = 4;
-			// 
-			// txtNivelActual
-			// 
-			this->txtNivelActual->Location = System::Drawing::Point(35, 170);
-			this->txtNivelActual->Name = L"txtNivelActual";
-			this->txtNivelActual->Size = System::Drawing::Size(180, 22);
-			this->txtNivelActual->TabIndex = 6;
-			// 
-			// txtNivelMinimo
-			// 
-			this->txtNivelMinimo->Location = System::Drawing::Point(245, 170);
-			this->txtNivelMinimo->Name = L"txtNivelMinimo";
-			this->txtNivelMinimo->Size = System::Drawing::Size(180, 22);
-			this->txtNivelMinimo->TabIndex = 8;
+
 			// 
 			// cmbCombustible
 			// 
@@ -175,6 +210,7 @@ namespace ProyectoProgra {
 			this->cmbCombustible->Name = L"cmbCombustible";
 			this->cmbCombustible->Size = System::Drawing::Size(280, 24);
 			this->cmbCombustible->TabIndex = 10;
+
 			// 
 			// chkActivo
 			// 
@@ -185,46 +221,43 @@ namespace ProyectoProgra {
 			this->chkActivo->Size = System::Drawing::Size(100, 24);
 			this->chkActivo->TabIndex = 11;
 			this->chkActivo->Text = L"Activo";
+
 			// 
 			// btnNuevo
 			// 
-			this->btnNuevo->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnNuevo, L"NUEVO", 35, 230, 12);
 			this->btnNuevo->Name = L"btnNuevo";
-			this->btnNuevo->Size = System::Drawing::Size(75, 23);
-			this->btnNuevo->TabIndex = 12;
-			this->btnNuevo->Click += gcnew System::EventHandler(this, &FrmTanques::btnNuevo_Click);
+			this->btnNuevo->Click += gcnew System::EventHandler(this, &Tanques::btnNuevo_Click);
+
 			// 
 			// btnGuardar
 			// 
-			this->btnGuardar->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnGuardar, L"GUARDAR", 180, 230, 13);
 			this->btnGuardar->Name = L"btnGuardar";
-			this->btnGuardar->Size = System::Drawing::Size(75, 23);
-			this->btnGuardar->TabIndex = 13;
-			this->btnGuardar->Click += gcnew System::EventHandler(this, &FrmTanques::btnGuardar_Click);
+			this->btnGuardar->Click += gcnew System::EventHandler(this, &Tanques::btnGuardar_Click);
+
 			// 
 			// btnActualizar
 			// 
-			this->btnActualizar->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnActualizar, L"ACTUALIZAR", 325, 230, 14);
 			this->btnActualizar->Name = L"btnActualizar";
-			this->btnActualizar->Size = System::Drawing::Size(75, 23);
-			this->btnActualizar->TabIndex = 14;
-			this->btnActualizar->Click += gcnew System::EventHandler(this, &FrmTanques::btnActualizar_Click);
+			this->btnActualizar->Click += gcnew System::EventHandler(this, &Tanques::btnActualizar_Click);
+
 			// 
 			// btnCambiarEstado
 			// 
-			this->btnCambiarEstado->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnCambiarEstado, L"ACTIVAR / DESACTIVAR", 490, 230, 15);
 			this->btnCambiarEstado->Name = L"btnCambiarEstado";
 			this->btnCambiarEstado->Size = System::Drawing::Size(180, 38);
-			this->btnCambiarEstado->TabIndex = 15;
-			this->btnCambiarEstado->Click += gcnew System::EventHandler(this, &FrmTanques::btnCambiarEstado_Click);
+			this->btnCambiarEstado->Click += gcnew System::EventHandler(this, &Tanques::btnCambiarEstado_Click);
+
 			// 
 			// btnCerrar
 			// 
-			this->btnCerrar->Location = System::Drawing::Point(0, 0);
+			configurarBotonGris(this->btnCerrar, L"CERRAR", 700, 230, 16);
 			this->btnCerrar->Name = L"btnCerrar";
-			this->btnCerrar->Size = System::Drawing::Size(75, 23);
-			this->btnCerrar->TabIndex = 16;
-			this->btnCerrar->Click += gcnew System::EventHandler(this, &FrmTanques::btnCerrar_Click);
+			this->btnCerrar->Click += gcnew System::EventHandler(this, &Tanques::btnCerrar_Click);
+
 			// 
 			// dgvTanques
 			// 
@@ -240,14 +273,11 @@ namespace ProyectoProgra {
 			this->dgvTanques->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dgvTanques->Size = System::Drawing::Size(830, 285);
 			this->dgvTanques->TabIndex = 17;
-			this->dgvTanques->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &FrmTanques::dgvTanques_CellClick);
+			this->dgvTanques->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Tanques::dgvTanques_CellClick);
+
 			// 
-			// FrmTanques
+			// Agregar controles
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(900, 620);
 			this->Controls->Add(this->lblTitulo);
 			this->Controls->Add(this->lblNombre);
 			this->Controls->Add(this->txtNombre);
@@ -266,29 +296,25 @@ namespace ProyectoProgra {
 			this->Controls->Add(this->btnCambiarEstado);
 			this->Controls->Add(this->btnCerrar);
 			this->Controls->Add(this->dgvTanques);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->MaximizeBox = false;
-			this->Name = L"FrmTanques";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Gestión de Tanques";
-			this->Load += gcnew System::EventHandler(this, &FrmTanques::FrmTanques_Load);
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvTanques))->EndInit();
+
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 
 #pragma endregion
-			private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
-				boton->BackColor = System::Drawing::Color::DodgerBlue;
-				boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				boton->ForeColor = System::Drawing::Color::White;
-				boton->Location = System::Drawing::Point(x, y);
-				boton->Size = System::Drawing::Size(130, 38);
-				boton->TabIndex = tabIndex;
-				boton->Text = texto;
-				boton->UseVisualStyleBackColor = false;
-			}
+
+	private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
+		boton->BackColor = System::Drawing::Color::DodgerBlue;
+		boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+		boton->ForeColor = System::Drawing::Color::White;
+		boton->Location = System::Drawing::Point(x, y);
+		boton->Size = System::Drawing::Size(130, 38);
+		boton->TabIndex = tabIndex;
+		boton->Text = texto;
+		boton->UseVisualStyleBackColor = false;
+	}
 
 	private: void configurarBotonGris(Button^ boton, String^ texto, int x, int y, int tabIndex) {
 		configurarBoton(boton, texto, x, y, tabIndex);
@@ -458,7 +484,5 @@ namespace ProyectoProgra {
 			cmbCombustible->SelectedValue = Convert::ToInt32(fila->Cells["IdCombustible"]->Value);
 		}
 	}
-private: System::Void FrmTanques_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	};
 }

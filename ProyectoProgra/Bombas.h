@@ -149,33 +149,46 @@ namespace ProyectoProgra {
 			// 
 			// chkActivo
 			// 
+			this->chkActivo->Checked = true;
+			this->chkActivo->CheckState = System::Windows::Forms::CheckState::Checked;
 			this->chkActivo->Location = System::Drawing::Point(685, 115);
 			this->chkActivo->Name = L"chkActivo";
 			this->chkActivo->Size = System::Drawing::Size(100, 24);
 			this->chkActivo->TabIndex = 5;
 			this->chkActivo->Text = L"Activo";
-			this->chkActivo->Checked = true;
 
 			// 
-			// Botones
+			// btnNuevo
 			// 
 			configurarBoton(this->btnNuevo, L"NUEVO", 35, 170, 6);
 			this->btnNuevo->Name = L"btnNuevo";
 			this->btnNuevo->Click += gcnew System::EventHandler(this, &Bombas::btnNuevo_Click);
 
+			// 
+			// btnGuardar
+			// 
 			configurarBoton(this->btnGuardar, L"GUARDAR", 180, 170, 7);
 			this->btnGuardar->Name = L"btnGuardar";
 			this->btnGuardar->Click += gcnew System::EventHandler(this, &Bombas::btnGuardar_Click);
 
+			// 
+			// btnActualizar
+			// 
 			configurarBoton(this->btnActualizar, L"ACTUALIZAR", 325, 170, 8);
 			this->btnActualizar->Name = L"btnActualizar";
 			this->btnActualizar->Click += gcnew System::EventHandler(this, &Bombas::btnActualizar_Click);
 
+			// 
+			// btnCambiarEstado
+			// 
 			configurarBoton(this->btnCambiarEstado, L"ACTIVAR / DESACTIVAR", 490, 170, 9);
 			this->btnCambiarEstado->Name = L"btnCambiarEstado";
 			this->btnCambiarEstado->Size = System::Drawing::Size(180, 38);
 			this->btnCambiarEstado->Click += gcnew System::EventHandler(this, &Bombas::btnCambiarEstado_Click);
 
+			// 
+			// btnCerrar
+			// 
 			configurarBotonGris(this->btnCerrar, L"CERRAR", 700, 170, 10);
 			this->btnCerrar->Name = L"btnCerrar";
 			this->btnCerrar->Click += gcnew System::EventHandler(this, &Bombas::btnCerrar_Click);
@@ -220,16 +233,17 @@ namespace ProyectoProgra {
 		}
 
 #pragma endregion
-			private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
-				boton->BackColor = System::Drawing::Color::DodgerBlue;
-				boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				boton->ForeColor = System::Drawing::Color::White;
-				boton->Location = System::Drawing::Point(x, y);
-				boton->Size = System::Drawing::Size(130, 38);
-				boton->TabIndex = tabIndex;
-				boton->Text = texto;
-				boton->UseVisualStyleBackColor = false;
-			}
+
+	private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
+		boton->BackColor = System::Drawing::Color::DodgerBlue;
+		boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+		boton->ForeColor = System::Drawing::Color::White;
+		boton->Location = System::Drawing::Point(x, y);
+		boton->Size = System::Drawing::Size(130, 38);
+		boton->TabIndex = tabIndex;
+		boton->Text = texto;
+		boton->UseVisualStyleBackColor = false;
+	}
 
 	private: void configurarBotonGris(Button^ boton, String^ texto, int x, int y, int tabIndex) {
 		configurarBoton(boton, texto, x, y, tabIndex);
@@ -390,5 +404,5 @@ namespace ProyectoProgra {
 			cmbTanque->SelectedValue = Convert::ToInt32(fila->Cells["IdTanque"]->Value);
 		}
 	}
-};
+	};
 }

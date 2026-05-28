@@ -68,29 +68,54 @@ namespace ProyectoProgra {
 			this->lblNombre = (gcnew System::Windows::Forms::Label());
 			this->lblTipo = (gcnew System::Windows::Forms::Label());
 			this->lblPrecio = (gcnew System::Windows::Forms::Label());
+
 			this->txtNombre = (gcnew System::Windows::Forms::TextBox());
 			this->txtTipo = (gcnew System::Windows::Forms::TextBox());
 			this->txtPrecio = (gcnew System::Windows::Forms::TextBox());
+
 			this->chkActivo = (gcnew System::Windows::Forms::CheckBox());
+
 			this->btnNuevo = (gcnew System::Windows::Forms::Button());
 			this->btnGuardar = (gcnew System::Windows::Forms::Button());
 			this->btnActualizar = (gcnew System::Windows::Forms::Button());
 			this->btnCambiarEstado = (gcnew System::Windows::Forms::Button());
 			this->btnCerrar = (gcnew System::Windows::Forms::Button());
+
 			this->dgvCombustibles = (gcnew System::Windows::Forms::DataGridView());
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCombustibles))->BeginInit();
 			this->SuspendLayout();
+
+			// 
+			// Combustibles
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::White;
+			this->ClientSize = System::Drawing::Size(900, 600);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->MaximizeBox = false;
+			this->Name = L"Combustibles";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->Text = L"Gesti\u00F3n de Combustibles";
+
 			// 
 			// lblTitulo
 			// 
-			this->lblTitulo->Font = (gcnew System::Drawing::Font(L"Arial Rounded MT Bold", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			this->lblTitulo->Font = (gcnew System::Drawing::Font(
+				L"Arial Rounded MT Bold",
+				18,
+				System::Drawing::FontStyle::Bold,
+				System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)
+			));
 			this->lblTitulo->Location = System::Drawing::Point(30, 20);
 			this->lblTitulo->Name = L"lblTitulo";
 			this->lblTitulo->Size = System::Drawing::Size(820, 40);
 			this->lblTitulo->TabIndex = 0;
-			this->lblTitulo->Text = L"GESTIÓN DE COMBUSTIBLES";
+			this->lblTitulo->Text = L"GESTI\u00D3N DE COMBUSTIBLES";
 			this->lblTitulo->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+
 			// 
 			// lblNombre
 			// 
@@ -99,6 +124,15 @@ namespace ProyectoProgra {
 			this->lblNombre->Size = System::Drawing::Size(180, 20);
 			this->lblNombre->TabIndex = 1;
 			this->lblNombre->Text = L"Nombre combustible";
+
+			// 
+			// txtNombre
+			// 
+			this->txtNombre->Location = System::Drawing::Point(35, 115);
+			this->txtNombre->Name = L"txtNombre";
+			this->txtNombre->Size = System::Drawing::Size(280, 22);
+			this->txtNombre->TabIndex = 2;
+
 			// 
 			// lblTipo
 			// 
@@ -107,21 +141,7 @@ namespace ProyectoProgra {
 			this->lblTipo->Size = System::Drawing::Size(160, 20);
 			this->lblTipo->TabIndex = 3;
 			this->lblTipo->Text = L"Tipo combustible";
-			// 
-			// lblPrecio
-			// 
-			this->lblPrecio->Location = System::Drawing::Point(590, 90);
-			this->lblPrecio->Name = L"lblPrecio";
-			this->lblPrecio->Size = System::Drawing::Size(160, 20);
-			this->lblPrecio->TabIndex = 5;
-			this->lblPrecio->Text = L"Precio por galon";
-			// 
-			// txtNombre
-			// 
-			this->txtNombre->Location = System::Drawing::Point(35, 115);
-			this->txtNombre->Name = L"txtNombre";
-			this->txtNombre->Size = System::Drawing::Size(280, 22);
-			this->txtNombre->TabIndex = 2;
+
 			// 
 			// txtTipo
 			// 
@@ -129,6 +149,16 @@ namespace ProyectoProgra {
 			this->txtTipo->Name = L"txtTipo";
 			this->txtTipo->Size = System::Drawing::Size(220, 22);
 			this->txtTipo->TabIndex = 4;
+
+			// 
+			// lblPrecio
+			// 
+			this->lblPrecio->Location = System::Drawing::Point(590, 90);
+			this->lblPrecio->Name = L"lblPrecio";
+			this->lblPrecio->Size = System::Drawing::Size(160, 20);
+			this->lblPrecio->TabIndex = 5;
+			this->lblPrecio->Text = L"Precio por gal\u00F3n";
+
 			// 
 			// txtPrecio
 			// 
@@ -136,6 +166,7 @@ namespace ProyectoProgra {
 			this->txtPrecio->Name = L"txtPrecio";
 			this->txtPrecio->Size = System::Drawing::Size(150, 22);
 			this->txtPrecio->TabIndex = 6;
+
 			// 
 			// chkActivo
 			// 
@@ -146,46 +177,43 @@ namespace ProyectoProgra {
 			this->chkActivo->Size = System::Drawing::Size(100, 24);
 			this->chkActivo->TabIndex = 7;
 			this->chkActivo->Text = L"Activo";
+
 			// 
 			// btnNuevo
 			// 
-			this->btnNuevo->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnNuevo, L"NUEVO", 35, 170, 8);
 			this->btnNuevo->Name = L"btnNuevo";
-			this->btnNuevo->Size = System::Drawing::Size(75, 23);
-			this->btnNuevo->TabIndex = 8;
 			this->btnNuevo->Click += gcnew System::EventHandler(this, &Combustibles::btnNuevo_Click);
+
 			// 
 			// btnGuardar
 			// 
-			this->btnGuardar->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnGuardar, L"GUARDAR", 180, 170, 9);
 			this->btnGuardar->Name = L"btnGuardar";
-			this->btnGuardar->Size = System::Drawing::Size(75, 23);
-			this->btnGuardar->TabIndex = 9;
 			this->btnGuardar->Click += gcnew System::EventHandler(this, &Combustibles::btnGuardar_Click);
+
 			// 
 			// btnActualizar
 			// 
-			this->btnActualizar->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnActualizar, L"ACTUALIZAR", 325, 170, 10);
 			this->btnActualizar->Name = L"btnActualizar";
-			this->btnActualizar->Size = System::Drawing::Size(75, 23);
-			this->btnActualizar->TabIndex = 10;
 			this->btnActualizar->Click += gcnew System::EventHandler(this, &Combustibles::btnActualizar_Click);
+
 			// 
 			// btnCambiarEstado
 			// 
-			this->btnCambiarEstado->Location = System::Drawing::Point(0, 0);
+			configurarBoton(this->btnCambiarEstado, L"ACTIVAR / DESACTIVAR", 490, 170, 11);
 			this->btnCambiarEstado->Name = L"btnCambiarEstado";
 			this->btnCambiarEstado->Size = System::Drawing::Size(180, 38);
-			this->btnCambiarEstado->TabIndex = 11;
 			this->btnCambiarEstado->Click += gcnew System::EventHandler(this, &Combustibles::btnCambiarEstado_Click);
+
 			// 
 			// btnCerrar
 			// 
-			this->btnCerrar->Location = System::Drawing::Point(0, 0);
+			configurarBotonGris(this->btnCerrar, L"CERRAR", 700, 170, 12);
 			this->btnCerrar->Name = L"btnCerrar";
-			this->btnCerrar->Size = System::Drawing::Size(75, 23);
-			this->btnCerrar->TabIndex = 12;
 			this->btnCerrar->Click += gcnew System::EventHandler(this, &Combustibles::btnCerrar_Click);
+
 			// 
 			// dgvCombustibles
 			// 
@@ -202,13 +230,10 @@ namespace ProyectoProgra {
 			this->dgvCombustibles->Size = System::Drawing::Size(830, 310);
 			this->dgvCombustibles->TabIndex = 13;
 			this->dgvCombustibles->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Combustibles::dgvCombustibles_CellClick);
+
 			// 
-			// Combustibles
+			// Agregar controles
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(900, 600);
 			this->Controls->Add(this->lblTitulo);
 			this->Controls->Add(this->lblNombre);
 			this->Controls->Add(this->txtNombre);
@@ -223,29 +248,25 @@ namespace ProyectoProgra {
 			this->Controls->Add(this->btnCambiarEstado);
 			this->Controls->Add(this->btnCerrar);
 			this->Controls->Add(this->dgvCombustibles);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->MaximizeBox = false;
-			this->Name = L"Combustibles";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Gestión de Combustibles";
-			this->Load += gcnew System::EventHandler(this, &Combustibles::Combustibles_Load);
+
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvCombustibles))->EndInit();
+
 			this->ResumeLayout(false);
 			this->PerformLayout();
-
 		}
 
 #pragma endregion
-			private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
-				boton->BackColor = System::Drawing::Color::DodgerBlue;
-				boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-				boton->ForeColor = System::Drawing::Color::White;
-				boton->Location = System::Drawing::Point(x, y);
-				boton->Size = System::Drawing::Size(130, 38);
-				boton->TabIndex = tabIndex;
-				boton->Text = texto;
-				boton->UseVisualStyleBackColor = false;
-			}
+
+	private: void configurarBoton(Button^ boton, String^ texto, int x, int y, int tabIndex) {
+		boton->BackColor = System::Drawing::Color::DodgerBlue;
+		boton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+		boton->ForeColor = System::Drawing::Color::White;
+		boton->Location = System::Drawing::Point(x, y);
+		boton->Size = System::Drawing::Size(130, 38);
+		boton->TabIndex = tabIndex;
+		boton->Text = texto;
+		boton->UseVisualStyleBackColor = false;
+	}
 
 	private: void configurarBotonGris(Button^ boton, String^ texto, int x, int y, int tabIndex) {
 		configurarBoton(boton, texto, x, y, tabIndex);
@@ -372,7 +393,5 @@ namespace ProyectoProgra {
 		String^ estado = Convert::ToString(fila->Cells["Estado"]->Value);
 		chkActivo->Checked = estado == "Activo";
 	}
-private: System::Void Combustibles_Load(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+	};
 }

@@ -217,7 +217,7 @@ Class ProyectoProgra.Registro: AutoLayout, AnsiClass, Class, Public, BeforeField
 Class ProyectoProgra.Usuarios: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-Class ProyectoProgra.FrmTanques: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+Class ProyectoProgra.Tanques: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class ProyectoProgra.Reportes: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit

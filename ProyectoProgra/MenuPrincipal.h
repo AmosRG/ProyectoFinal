@@ -317,7 +317,7 @@ namespace ProyectoProgra {
 	}
 
 	private: System::Void btnTanques_Click(System::Object^ sender, System::EventArgs^ e) {
-		FrmTanques^ formulario = gcnew FrmTanques();
+		Tanques^ formulario = gcnew Tanques();
 		formulario->ShowDialog();
 	}
 
